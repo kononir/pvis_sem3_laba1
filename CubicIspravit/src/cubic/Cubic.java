@@ -37,59 +37,67 @@ public class Cubic {
         return true;
     }
     public static void Watch() {
-        for(int i=0;i<w_h;i++)
-            for(int j=0; j<w_h; j++){
-                System.out.print("   ");
-                System.out.print(cub[6][i][j]);
-                System.out.print(cub[6][i][j]);
-                System.out.println(cub[6][i][j]);
+        for(int i=1;i<=w_h;i++){
+            System.out.print("   ");
+            for(int j=1; j<=w_h; j++){    
+                System.out.print(cub[6][i][j]);     
             }
-
-        for(int i=0;i<w_h;i++){
-            System.out.print(cub[4][0][i]);
+            System.out.println("");
         }
-        for(int i=0;i<w_h;i++){
-            System.out.print(cub[1][0][i]);
-        }
-        for(int i=0;i<w_h;i++){
-            System.out.print(cub[2][0][i]);
-        }
-
-        for(int i=0;i<w_h;i++){
+        
+        for(int i=1;i<=w_h;i++){
             System.out.print(cub[4][1][i]);
         }
-        for(int i=0;i<w_h;i++){
+        System.out.println("");
+        for(int i=1;i<=w_h;i++){
             System.out.print(cub[1][1][i]);
         }
-        for(int i=0;i<w_h;i++){
+        System.out.println("");
+        for(int i=1;i<=w_h;i++){
             System.out.print(cub[2][1][i]);
         }
-
-        for(int i=0;i<w_h;i++){
+        System.out.println("");
+        
+        for(int i=1;i<=w_h;i++){
+            System.out.print(cub[4][1][i]);
+        }
+        System.out.println("");
+        for(int i=1;i<=w_h;i++){
+            System.out.print(cub[1][1][i]);
+        }
+        System.out.println("");
+        for(int i=1;i<=w_h;i++){
+            System.out.print(cub[2][1][i]);
+        }
+        System.out.println("");
+        
+        for(int i=1;i<=w_h;i++){
             System.out.print(cub[4][2][i]);
         }
-        for(int i=0;i<w_h;i++){
+        System.out.println("");
+        for(int i=1;i<=w_h;i++){
             System.out.print(cub[1][2][i]);
         }
-        for(int i=0;i<w_h;i++){
+        System.out.println("");
+        for(int i=1;i<=w_h;i++){
             System.out.print(cub[2][2][i]);
         }
-
-        for(int i=0;i<w_h;i++)
-            for(int j=0; j<w_h; j++){
-                System.out.print("   ");
+        System.out.println("");
+        
+        for(int i=1;i<=w_h;i++){
+            System.out.print("   ");
+            for(int j=1; j<=w_h; j++){
                 System.out.print(cub[5][i][j]);
-                System.out.print(cub[5][i][j]);
-                System.out.println(cub[5][i][j]);
             }
-
-        for(int i=0;i<w_h;i++)
-            for(int j=0; j<w_h; j++){
-                System.out.print("   ");
+            System.out.println("");
+        }
+        for(int i=1;i<=w_h;i++){
+            System.out.print("   ");
+            for(int j=1; j<=w_h; j++){
                 System.out.print(cub[3][i][j]);
-                System.out.print(cub[3][i][j]);
-                System.out.println(cub[3][i][j]);
             }
+            System.out.println("");
+        }
     }
     //support
     public static void rank_gorizontal(int a, int b, int r){

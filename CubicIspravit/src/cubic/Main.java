@@ -15,7 +15,7 @@ public class Main {
     public static Cubic cub;
     public static void main(String[] args) {
         cub = File.WRiTE();
-        Cubic.Watch();
+        cub.Watch();
 
         Main gui = new Main();
         gui.go();

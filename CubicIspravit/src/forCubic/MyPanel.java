@@ -24,7 +24,7 @@ public class MyPanel extends JPanel{
         super.paintComponents(g);
         g.setColor(Color.BLACK);
         this.size=(int)(300.0/(double)cub.getW_h());
-        for(int i=0; i>cub.getW_h(); i--){
+        for(int i=0; i<cub.getW_h(); i++){
             for(int j=0; j<cub.getW_h(); j++){
                 g.drawRect(x, y, size, size);
                 x+=size;
@@ -32,14 +32,16 @@ public class MyPanel extends JPanel{
             y+=size; x = 350; 
         }
         paintColor(g);
-    }
+    }    
+           
+ 
     public void paintColor(Graphics g){
-        cub = new Cubic(cub.getW_h());
+        //cub = new Cubic(cub.getW_h());
         int gran[][];
-        gran=new int[cub.getW_h()][cub.getW_h()];
+        gran=new int[cub.getW_h()+1][cub.getW_h()+1];
         for(int i=0; i<cub.getW_h(); i++)
             for(int j=0; j<cub.getW_h(); j++)
-                gran[i][j]=cub.getCub(1, i, j);
+                gran[i][j]=cub.getCub(1, i+1, j+1);
         cub.Watch();
         super.paintComponents(g);
         g.setColor(Color.ORANGE);
@@ -60,8 +62,8 @@ public class MyPanel extends JPanel{
 
             this.x=350;
             this.y=350;
-            for(int j=0; i<cub.getW_h(); i++){
-                for(int k=0; j<cub.getW_h(); j++){
+            for(int j=0; j<cub.getW_h(); j++){
+                for(int k=0; k<cub.getW_h(); k++){
                     if (gran[j][k] == i)
                         g.fillRect(x+1, y+1, size-1, size-1);
                     x+=size;
