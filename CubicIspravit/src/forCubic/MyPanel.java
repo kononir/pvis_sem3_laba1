@@ -15,12 +15,14 @@ public class MyPanel extends JPanel{
 
 
     //int y = 350, x = 350, size = 100; для 3
-    int y = 350, x = 350, size;
+    static int y = 350, x = 350, size;
     Cubic cub;
     public MyPanel(Cubic cub){
         this.cub=cub;
     }
     public void paintComponent (Graphics g){
+         System.out.print("GGGGG");
+        cub.Watch();
         super.paintComponents(g);
         g.setColor(Color.BLACK);
         this.size=(int)(300.0/(double)cub.getW_h());
@@ -37,6 +39,8 @@ public class MyPanel extends JPanel{
  
     public void paintColor(Graphics g){
         //cub = new Cubic(cub.getW_h());
+        System.out.print("Colors");
+        cub.Watch();
         int gran[][];
         gran=new int[cub.getW_h()+1][cub.getW_h()+1];
         for(int i=0; i<cub.getW_h(); i++)
@@ -44,7 +48,7 @@ public class MyPanel extends JPanel{
                 gran[i][j]=cub.getCub(1, i+1, j+1);
         cub.Watch();
         super.paintComponents(g);
-        g.setColor(Color.ORANGE);
+        //g.setColor(Color.ORANGE);
         for(int i=1; i<=6; i++) {
 
             if (i == 1)
@@ -88,6 +92,7 @@ public class MyPanel extends JPanel{
                 y+=size; x = 350;
             }
         }
+        y=350;
     }
 }
 

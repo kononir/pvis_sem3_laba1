@@ -16,7 +16,7 @@ public class File {
     public static Cubic WRiTE() {
         
         try{
-            FileInputStream fstream = new FileInputStream("D:/1.txt");
+            FileInputStream fstream = new FileInputStream("D:/3.txt");
             BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
             String strLine;
             while ((strLine = br.readLine()) != null){ //считываем цифру размера

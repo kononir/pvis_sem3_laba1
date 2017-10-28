@@ -11,11 +11,7 @@ public class Cubic {
     public Cubic(int a){     
         cub = new int[7][a+1][a+1];
         w_h = a;
-        for(int i=0; i<a; i++){
-            cub[i][0][0]=a;
-            cub[0][i][0]=a;
-            cub[0][0][i]=a;
-        }
+        cub[0][0][0]=a;
     }
     public int getW_h(){
         return w_h;
@@ -37,66 +33,15 @@ public class Cubic {
         return true;
     }
     public static void Watch() {
-        for(int i=1;i<=w_h;i++){
-            System.out.print("   ");
-            for(int j=1; j<=w_h; j++){    
-                System.out.print(cub[6][i][j]);     
+        System.out.println("");
+        for(int i=1;i<=6;i++){
+            for(int j=1;j<=w_h;j++){
+                System.out.print("   ");
+                for(int k=1; k<=w_h; k++){    
+                    System.out.print(cub[i][j][k]);     
+                }
+                System.out.println("");
             }
-            System.out.println("");
-        }
-        
-        for(int i=1;i<=w_h;i++){
-            System.out.print(cub[4][1][i]);
-        }
-        System.out.println("");
-        for(int i=1;i<=w_h;i++){
-            System.out.print(cub[1][1][i]);
-        }
-        System.out.println("");
-        for(int i=1;i<=w_h;i++){
-            System.out.print(cub[2][1][i]);
-        }
-        System.out.println("");
-        
-        for(int i=1;i<=w_h;i++){
-            System.out.print(cub[4][1][i]);
-        }
-        System.out.println("");
-        for(int i=1;i<=w_h;i++){
-            System.out.print(cub[1][1][i]);
-        }
-        System.out.println("");
-        for(int i=1;i<=w_h;i++){
-            System.out.print(cub[2][1][i]);
-        }
-        System.out.println("");
-        
-        for(int i=1;i<=w_h;i++){
-            System.out.print(cub[4][2][i]);
-        }
-        System.out.println("");
-        for(int i=1;i<=w_h;i++){
-            System.out.print(cub[1][2][i]);
-        }
-        System.out.println("");
-        for(int i=1;i<=w_h;i++){
-            System.out.print(cub[2][2][i]);
-        }
-        System.out.println("");
-        
-        for(int i=1;i<=w_h;i++){
-            System.out.print("   ");
-            for(int j=1; j<=w_h; j++){
-                System.out.print(cub[5][i][j]);
-            }
-            System.out.println("");
-        }
-        for(int i=1;i<=w_h;i++){
-            System.out.print("   ");
-            for(int j=1; j<=w_h; j++){
-                System.out.print(cub[3][i][j]);
-            }
-            System.out.println("");
         }
     }
     //support
@@ -105,7 +50,8 @@ public class Cubic {
             cub[a][r][i] = cub[b][r][i];
     }
     public static int[]     buff_gorizontal_input(int g, int r){
-        int[] b = null;
+        int[] b=new int[w_h+1];
+        System.out.print("GArrry!!!!!!!!!!!!!!!!!!!");
         for (int i = 1; i <= cub[0][0][0]; i++)
             b[i] = cub [g][r][i];
         return b;
@@ -119,7 +65,7 @@ public class Cubic {
             cub[a][i][s] = cub[b][i][s];
     }
     public static int[]     buff_vertical_input(int g, int s){
-        int[] b = null;
+        int[] b=new int[w_h+1];
         for (int i = 1; i <= cub[0][0][0]; i++)
             b[i] = cub [g][i][s];
         return b;
