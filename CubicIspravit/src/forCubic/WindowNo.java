@@ -33,8 +33,8 @@ public class WindowNo extends JFrame {
         Button2.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent r2){
                 for(int i=1; i <=6; i++)
-                    for(int j=1; i <=6; i++)
-                        for(int k=1; i <=6; i++)
+                    for(int j=1; j <=cub.getW_h(); j++)
+                        for(int k=1; k <=cub.getW_h(); k++)
                             cub.setCub(i,j,k,i);
                 setVisible(false);
                 frame.repaint();

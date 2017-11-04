@@ -82,8 +82,9 @@ public class Cubic {
         cub[g][2][3] = cub[g][3][2];
         cub[g][3][3] = cub[g][3][1];
         cub[g][3][2] = cub[g][2][1];
-        for (int i = cub[0][0][0]; i <= 1; i--)
-            cub [g][i][1] = b[i];
+        for (int i = cub[0][0][0], j = 1; i >= 1 && j<=cub[0][0][0]; i--, j++){
+            cub [g][j][1] = b[i];
+        }
     }
     public static void Uhr_po      (int g){
         int[] b = null;
@@ -93,14 +94,15 @@ public class Cubic {
         cub[g][2][1] = cub[g][3][2];
         cub[g][3][1] = cub[g][3][3];
         cub[g][3][2] = cub[g][2][3];
-        for (int i = cub[0][0][0]; i <= 1; i--)
-            cub [g][i][1] = b[i];
+        for (int i = 1; i <= cub[0][0][0]; i++)
+            cub [g][i][3] = b[i];
     }
     //gorizontal
     public static void rotate_Vr() {
         int[] b = null;
         b = buff_gorizontal_input(1, 1);
         rank_gorizontal(1, 4, 1);
+        
         rank_gorizontal(4, 3, 1);
         rank_gorizontal(3, 2, 1);
         buff_gorizontal_output(b, 2, 1);
@@ -153,11 +155,19 @@ public class Cubic {
         rotate_Vl();
         rotate_Zl();
         rotate_Nl();
+        Uhr_protiv(2); //полный
+        Uhr_protiv(2); //поворот
+        Uhr_protiv(3); //полный
+        Uhr_protiv(3); //поворот
     }
     public static void gran_right() {
         rotate_Vr();
         rotate_Zr();
         rotate_Nr();
+        Uhr_protiv(4); //полный
+        Uhr_protiv(4); //поворот
+        Uhr_protiv(3); //полный
+        Uhr_protiv(3); //поворот
     }
     //vertical
     public static void left_up() {
@@ -216,10 +226,18 @@ public class Cubic {
         left_up();
         midle_up();
         right_up();
+        //Uhr_protiv(3); //полный
+        //Uhr_protiv(3); //поворот
+        //Uhr_protiv(5); //полный
+        //Uhr_protiv(5); //поворот
     }
     public static void gran_down() {
         left_down();
         midle_down();
         right_down();
+        //Uhr_protiv(3); //полный
+        //Uhr_protiv(3); //поворот
+        //Uhr_protiv(6); //полный
+        //Uhr_protiv(6); //поворот
     }
 }
